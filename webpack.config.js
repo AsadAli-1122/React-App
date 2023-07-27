@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require("path");
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
   target: "web",
   devServer: {
     historyApiFallback: true,
-    port: "3030",
+    port: process.env.REACT_APP_PORT || '3030',
     static: ["./public"],
     open: true,
     hot: true,
